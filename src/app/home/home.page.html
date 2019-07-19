@@ -1,0 +1,126 @@
+<ion-header>
+  <ion-toolbar color="secondary" >
+     
+    <ion-title>
+      WeatherApp
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="background">
+    
+    <!--Card-->
+    <ion-card  color="dark"  >
+       
+        
+        <div><h2>{{name}}</h2></div>
+        
+              <h5>
+                  {{date | date: 'EEEE'}} {{date | date: 'dd'}}/{{date | date:'MM'}}/{{date | date: 'yyyy'}}</h5>
+                  
+                  <tr *ngFor="let value of WeatherData">
+                      <h3>{{value.weather[0].description}}</h3>
+                      <img src="http://openweathermap.org/img/w/{{value.weather[0].icon}}.png">
+                      
+                      <h5> Wind: {{value.wind.speed| number :'1.0-0'}}km/h</h5>
+                      <h5> Humidty: {{value.main.humidity| number :'1.0-0'}}%</h5>
+                      <td>
+                       <h1> {{value.main.temp_max | number :'1.0-0'}}&deg;C</h1>
+                      
+                      </td>
+                   
+                    </tr>
+
+                
+  </ion-card>
+
+    <ion-searchbar  color="dark" showCancelButton="focus" [(ngModel)]="city"></ion-searchbar>
+    <ion-button color ="dark" (click)="searchData()">Search</ion-button>
+    
+    
+    <ion-grid><ion-row>
+    <ion-item  color="dark" >
+            <ion-grid>
+            <!-- one -->
+            <ion-row >
+                <ion-col >
+                        <h6> {{value1?.list[8].dt_txt | date: 'EEEE' }} </h6>
+                        
+               <br>
+                    <img style="vertical-align: middle" src="http://openweathermap.org/img/w/{{value1?.list[8].weather[0].icon}}.png">
+                <br>
+                {{value1?.list[8].main.temp_min | number: '1.0-0'}}&deg;C
+                <h6>
+              Humidity : {{value1?.list[8].main.humidity | number: '1.0-0'}}%
+            </h6>
+            <h6>
+                    Wind : {{value1?.list[8].wind.speed | number: '1.0-0'}}km/h
+                  </h6>
+            </ion-col>
+            </ion-row>
+            </ion-grid>
+</ion-item>           
+<ion-item>
+        <ion-grid>
+        <!-- one -->
+        <ion-row style="align-content: center">
+            <ion-col col-3>
+                    <h6> {{value1?.list[16].dt_txt | date : 'EEEE' }} </h6>
+           <br>
+                <img style="vertical-align: middle" src="http://openweathermap.org/img/w/{{value1?.list[8].weather[0].icon}}.png">
+            <br>
+            {{value1?.list[16].main.temp_min | number: '1.0-0'}}&deg;
+            <h6>
+                    Humidity : {{value1?.list[16].main.humidity | number: '1.0-0'}}%
+                  </h6>
+                  <h6>
+                          Wind : {{value1?.list[16].wind.speed | number: '1.0-0'}}km/h
+                        </h6>
+        </ion-col>
+        </ion-row>
+        </ion-grid>
+</ion-item> 
+<ion-item>
+        <ion-grid>
+        <!-- one -->
+        <ion-row style="align-content: center">
+            <ion-col col-3>
+                    <h6> {{value1?.list[24].dt_txt | date : 'EEEE' }} </h6>
+           <br>
+                <img style="vertical-align: middle" src="http://openweathermap.org/img/w/{{value1?.list[8].weather[0].icon}}.png">
+            <br>
+            {{value1?.list[24].main.temp_min | number: '1.0-0'}}&deg;
+            <h6>
+                    Humidity : {{value1?.list[24].main.humidity | number: '1.0-0'}}%
+                  </h6>
+                  <h6>
+                          Wind : {{value1?.list[24].wind.speed | number: '1.0-0'}}km/h
+                        </h6>
+        </ion-col>
+        </ion-row>
+        </ion-grid>
+</ion-item> 
+<ion-item color="dark"  >
+        <ion-grid >
+        <!-- one -->
+        <ion-row style="align-content: center">
+            <ion-col col-3>
+                    <h6> {{value1?.list[32].dt_txt | date : 'EEEE' }} </h6>
+           <br>
+                <img style="vertical-align: middle" src="http://openweathermap.org/img/w/{{value1?.list[8].weather[0].icon}}.png">
+            <br>
+            {{value1?.list[32].main.temp_min | number: '1.0-0'}}&deg;
+            <h6>
+                    Humidity : {{value1?.list[32].main.humidity | number: '1.0-0'}}%
+                  </h6>
+                  <h6>
+                          Wind : {{value1?.list[32].wind.speed | number: '1.0-0'}}km/h
+                        </h6>
+        </ion-col>
+        </ion-row>
+        </ion-grid>
+</ion-item> 
+</ion-row></ion-grid>
+
+    
+</ion-content>
